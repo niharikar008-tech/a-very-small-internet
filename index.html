@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f3e9">
+  <meta name="description" content="A tiny planet containing a universe of strange, pointless little websites.">
+  <title>A Very Small Internet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#home" class="logo">the tiny internet <span>®</span></a>
+    <span class="online"><span class="dot"></span> 5 tiny worlds online</span>
+  </header>
 
+  <main id="home">
+    <section class="hero">
+      <p class="eyebrow">A SMALL PLACE ON THE INTERNET</p>
+      <h1>Somewhere between<br> <span>here and nowhere.</span></h1>
+      <p class="intro">
+        Welcome to a very small internet. There isn't much to do here.
+        That's kind of the point.
+      </p>
+
+      <div class="planet-scene">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <span class="star star-one">✦</span>
+        <span class="star star-two">✧</span>
+        <span class="star star-three">·</span>
+        <span class="planet-label">a little planet<br>with little problems</span>
+
+        <div class="planet">
+          <a class="door door-museum" href="#museum" aria-label="Visit the Museum of Almost-Said Things">M</a>
+          <a class="door door-plant" href="#garden" aria-label="Visit the Growing Website">G</a>
+          <a class="door door-cloud" href="#cloud" aria-label="Visit the Cloud Complaint Department">C</a>
+          <a class="door door-shop" href="#shop" aria-label="Visit the Shop That Sells Nothing">S</a>
+          <a class="door door-secret" href="#secret" aria-label="Visit the secret website">?</a>
+          <span class="planet-crater crater-one"></span>
+          <span class="planet-crater crater-two"></span>
+          <span class="planet-crater crater-three"></span>
+        </div>
+
+        <p class="planet-caption">click a door. see what happens.</p>
+      </div>
+    </section>
+
+    <section class="worlds" id="worlds">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR LITTLE DESTINATIONS</p>
+          <h2>Five doors. No particular reason.</h2>
+        </div>
+        <span class="world-count">01 — 05</span>
+      </div>
+
+      <div class="world-grid">
+        <a href="#museum" class="world-card museum-card">
+          <span class="card-number">01 / FEELINGS</span>
+          <span class="card-art art-museum">“…”</span>
+          <h3>The Almost Museum</h3>
+          <p>A collection of things you almost said.</p>
+          <span class="visit">ENTER MUSEUM ↗</span>
+        </a>
+
+        <a href="#garden" class="world-card garden-card">
+          <span class="card-number">02 / NATURE</span>
+          <span class="card-art art-garden">🌱</span>
+          <h3>A Website That Grows</h3>
+          <p>One more visit. One more leaf.</p>
+          <span class="visit">WATER THE INTERNET ↗</span>
+        </a>
+
+        <a href="#cloud" class="world-card cloud-card">
+          <span class="card-number">03 / CUSTOMER SERVICE</span>
+          <span class="card-art art-cloud">☁</span>
+          <h3>Cloud Complaints</h3>
+          <p>Somebody has to listen to the clouds.</p>
+          <span class="visit">FILE A COMPLAINT ↗</span>
+        </a>
+
+        <a href="#shop" class="world-card shop-card">
+          <span class="card-number">04 / COMMERCE</span>
+          <span class="card-art art-shop">∅</span>
+          <h3>The Nothing Shop</h3>
+          <p>Everything you never needed. For free.</p>
+          <span class="visit">BUY ABSOLUTELY NOTHING ↗</span>
+        </a>
+
+        <a href="#secret" class="world-card secret-card">
+          <span class="card-number">05 / CLASSIFIED</span>
+          <span class="card-art art-secret">?</span>
+          <h3>The Unimportant Secret</h3>
+          <p>There is a reason this door is different.</p>
+          <span class="visit">PROBABLY DON'T ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="visitor-note">
+      <p>YOU ARE VISITOR NUMBER <span id="visitor-count">...</span></p>
+      <p class="small-note">Probably. We don't really know how counting works here.</p>
+    </section>
+
+    <!-- WORLD 1 -->
+    <section class="mini-world museum-world" id="museum">
+      <a class="back-link" href="#home">← back to the planet</a>
+      <p class="eyebrow">WORLD 01 / THE ALMOST MUSEUM</p>
+      <h2>Things we almost said.</h2>
+      <p class="world-description">
+        Every sentence here took a different path. Some were swallowed.
+        Some arrived too late. Some are still waiting.
+      </p>
+
+      <div class="museum-exhibit" id="museum-exhibit">
+        <span class="exhibit-label">EXHIBIT NO. 001</span>
+        <p id="almost-text">I wanted to tell you that I missed you.</p>
+        <span class="exhibit-caption">preserved in a jar of almosts</span>
+      </div>
+
+      <button class="button button-dark" id="next-almost">OPEN ANOTHER DRAWER ↗</button>
+
+      <div class="contribute">
+        <label for="almost-input">Leave a sentence of your own.</label>
+        <textarea id="almost-input" maxlength="180" placeholder="I almost said..."></textarea>
+        <button class="button button-dark" id="add-almost">PLACE IT IN THE MUSEUM +</button>
+        <p class="feedback" id="museum-feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- WORLD 2 -->
+    <section class="mini-world garden-world" id="garden">
+      <a class="back-link" href="#home">← back to the planet</a>
+      <p class="eyebrow">WORLD 02 / THE GROWING WEBSITE</p>
+      <h2>A little greener<br>than yesterday.</h2>
+      <p class="world-description">
+        This plant grows whenever you visit. It doesn't need sunlight,
+        water, or your approval. Just another visit.
+      </p>
+
+      <div class="garden-display">
+        <div class="plant" id="plant">
+          <span class="plant-flower">✿</span>
+          <span class="leaf leaf-1"></span>
+          <span class="leaf leaf-2"></span>
+          <span class="leaf leaf-3"></span>
+          <span class="leaf leaf-4"></span>
+          <span class="leaf leaf-5"></span>
+          <span class="leaf leaf-6"></span>
+          <span class="stem"></span>
+          <span class="pot"></span>
+        </div>
+        <p id="plant-message">A small beginning.</p>
+        <p class="leaf-counter">LEAVES GROWN: <span id="leaf-count">0</span></p>
+      </div>
+
+      <button class="button button-green" id="grow-plant">GIVE IT ANOTHER LEAF +</button>
+      <p class="small-note">Its progress is saved on this device.</p>
+    </section>
+
+    <!-- WORLD 3 -->
+    <section class="mini-world cloud-world" id="cloud">
+      <a class="back-link" href="#home">← back to the planet</a>
+      <p class="eyebrow">WORLD 03 / CUSTOMER SERVICE</p>
+      <h2>The sky would like<br>to speak to a manager.</h2>
+
+      <div class="cloud-illustration">
+        <div class="cloud-shape">☁</div>
+        <p id="cloud-mood">Currently: mildly inconvenienced.</p>
+      </div>
+
+      <p class="world-description">
+        Our cloud representatives are listening. Whether they'll do
+        anything about it is another matter.
+      </p>
+
+      <label for="complaint-type">What is the problem today?</label>
+      <select id="complaint-type">
+        <option value="rain">Excessive rain</option>
+        <option value="heat">Unreasonable sunshine</option>
+        <option value="wind">Suspicious wind activity</option>
+        <option value="monday">Monday has happened again</option>
+        <option value="existence">General existence concerns</option>
+      </select>
+
+      <button class="button button-cloud" id="file-complaint">SUBMIT COMPLAINT ↗</button>
+      <div class="complaint-response" id="complaint-response" aria-live="polite">
+        <span>DEPARTMENT OF ATMOSPHERIC FEELINGS</span>
+        <p>Your concerns are floating in the system.</p>
+      </div>
+      <p class="small-note">Estimated response time: somewhere between now and never.</p>
+    </section>
+
+    <!-- WORLD 4 -->
+    <section class="mini-world shop-world" id="shop">
+      <a class="back-link" href="#home">← back to the planet</a>
+      <p class="eyebrow">WORLD 04 / COMMERCE WITHOUT PURPOSE</p>
+      <h2>Welcome to the Nothing Shop.</h2>
+      <p class="world-description">
+        We sell things that do not exist, solve no problems, and cost
+        absolutely nothing. Please shop responsibly.
+      </p>
+
+      <div class="shop-grid">
+        <article class="product">
+          <div class="product-art">□</div>
+          <h3>Invisible Box</h3>
+          <p>Stores absolutely nothing.</p>
+          <span>₹0.00</span>
+          <button class="buy-button" data-product="Invisible Box">ACQUIRE</button>
+        </article>
+        <article class="product">
+          <div class="product-art">◯</div>
+          <h3>Borrowed Time</h3>
+          <p>Comes with no extra hours.</p>
+          <span>₹0.00</span>
+          <button class="buy-button" data-product="Borrowed Time">ACQUIRE</button>
+        </article>
+        <article class="product">
+          <div class="product-art">〰</div>
+          <h3>Unsent Letter</h3>
+          <p>Addressed to nobody in particular.</p>
+          <span>₹0.00</span>
+          <button class="buy-button" data-product="Unsent Letter">ACQUIRE</button>
+        </article>
+      </div>
+
+      <div class="receipt" id="receipt" aria-live="polite">
+        <p>YOUR VERY IMPORTANT RECEIPT</p>
+        <p id="receipt-items">You have acquired nothing.</p>
+        <div class="receipt-total">TOTAL: ₹0.00</div>
+        <button class="button button-dark" id="clear-cart">RETURN EVERYTHING TO NOTHING</button>
+      </div>
+    </section>
+
+    <!-- WORLD 5 -->
+    <section class="mini-world secret-world" id="secret">
+      <a class="back-link" href="#home">← back to the planet</a>
+      <p class="eyebrow">WORLD 05 / DEFINITELY NOT IMPORTANT</p>
+      <h2>You found the secret.</h2>
+      <p class="world-description">
+        There is no prize. There is no hidden message. There is, however,
+        a very important button.
+      </p>
+      <button class="secret-button" id="secret-button">DO NOT PRESS</button>
+      <p class="secret-response" id="secret-response" aria-live="polite">
+        Seriously. Nothing will happen.
+      </p>
+      <button class="button button-dark" id="secret-reset">UN-DO THE UNIMPORTANT</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made of pixels, questionable decisions, and a little bit of internet.</p>
+    <a href="#home">RETURN TO THE TINY PLANET ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
