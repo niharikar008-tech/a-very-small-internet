@@ -1,1 +1,826 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
 
+:root {
+  --paper: #f8f3e9;
+  --ink: #292b27;
+  --muted: #77766e;
+  --line: #ded8cb;
+  --green: #55745b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 25px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.logo span {
+  font-size: 9px;
+}
+
+.online, .eyebrow, .card-number, .visit,
+.world-count, .planet-caption, .exhibit-label,
+.exhibit-caption, .leaf-counter, .complaint-response > span,
+.receipt > p:first-child, .receipt-total, footer a {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.1px;
+}
+
+.online {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.dot {
+  display: inline-block;
+  height: 7px;
+  width: 7px;
+  background: #779c70;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.hero {
+  text-align: center;
+  padding: 82px 20px 45px;
+}
+
+.eyebrow {
+  color: var(--muted);
+}
+
+.hero h1, .section-heading h2, .mini-world h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+  line-height: 1.13;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 68px);
+  margin: 22px 0 18px;
+}
+
+.hero h1 span {
+  color: #7d8d73;
+  font-style: italic;
+}
+
+.intro, .world-description {
+  color: var(--muted);
+  max-width: 490px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.planet-scene {
+  position: relative;
+  height: 385px;
+  max-width: 530px;
+  margin: 22px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planet {
+  position: relative;
+  width: 245px;
+  height: 245px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #e6d3a9, #c4b48b 65%, #aa9c78);
+  box-shadow: inset -17px -13px 0 #9d9878,
+              0 20px 45px #81765820;
+  transition: transform 0.5s;
+}
+
+.planet:hover {
+  transform: rotate(-5deg);
+}
+
+.planet::before {
+  content: "";
+  position: absolute;
+  width: 105px;
+  height: 35px;
+  background: #8eaa7b;
+  border-radius: 60% 35% 60% 40%;
+  top: 45px;
+  left: 35px;
+  transform: rotate(-20deg);
+}
+
+.planet::after {
+  content: "";
+  position: absolute;
+  width: 75px;
+  height: 45px;
+  background: #8eaa7b;
+  border-radius: 40% 60% 45% 55%;
+  right: 24px;
+  bottom: 48px;
+  transform: rotate(25deg);
+}
+
+.planet-crater {
+  position: absolute;
+  background: #b9aa83;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.crater-one {
+  width: 20px;
+  height: 11px;
+  top: 100px;
+  left: 55px;
+}
+
+.crater-two {
+  width: 12px;
+  height: 8px;
+  right: 54px;
+  top: 42px;
+}
+
+.crater-three {
+  width: 26px;
+  height: 14px;
+  bottom: 39px;
+  left: 85px;
+}
+
+.door {
+  position: absolute;
+  z-index: 3;
+  width: 39px;
+  height: 51px;
+  border: 2px solid #655d48;
+  border-radius: 20px 20px 3px 3px;
+  background: #f5e9ce;
+  display: grid;
+  place-items: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.door:hover {
+  transform: translateY(-8px) scale(1.1);
+  background: white;
+}
+
+.door-museum {
+  top: 92px;
+  left: 47px;
+}
+
+.door-plant {
+  top: 27px;
+  left: 145px;
+}
+
+.door-cloud {
+  right: 32px;
+  top: 107px;
+}
+
+.door-shop {
+  left: 87px;
+  bottom: 24px;
+}
+
+.door-secret {
+  right: 65px;
+  bottom: 45px;
+  background: #e9a18e;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px dashed #bcb4a1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 315px;
+  height: 315px;
+}
+
+.orbit-two {
+  width: 390px;
+  height: 210px;
+  transform: rotate(-25deg);
+}
+
+.star {
+  position: absolute;
+  color: #b29c68;
+}
+
+.star-one {
+  top: 40px;
+  left: 23%;
+  font-size: 23px;
+}
+
+.star-two {
+  right: 20%;
+  top: 85px;
+  font-size: 30px;
+}
+
+.star-three {
+  left: 22%;
+  bottom: 66px;
+  font-size: 40px;
+}
+
+.planet-label {
+  position: absolute;
+  top: 12px;
+  right: 9%;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.planet-caption {
+  position: absolute;
+  bottom: 0;
+  color: var(--muted);
+}
+
+.worlds {
+  padding: 80px 7%;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  gap: 20px;
+}
+
+.section-heading h2 {
+  font-size: clamp(26px, 4vw, 40px);
+  margin-top: 10px;
+}
+
+.world-count {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.world-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+}
+
+.world-card {
+  grid-column: span 2;
+  padding: 20px;
+  border: 1px solid var(--line);
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+  min-height: 305px;
+}
+
+.world-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.world-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.world-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px #39352a10;
+}
+
+.museum-card { background: #eee4d7; }
+.garden-card { background: #e5eadb; }
+.cloud-card { background: #e3eaf0; }
+.shop-card { background: #f1e5dc; }
+.secret-card { background: #e9e1ef; }
+
+.card-number {
+  color: #77766e;
+  font-size: 9px;
+}
+
+.card-art {
+  height: 115px;
+  display: grid;
+  place-items: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 66px;
+}
+
+.art-museum { color: #a47f6b; }
+.art-garden { font-size: 55px; }
+.art-cloud { color: #7897ad; font-size: 78px; }
+.art-shop { color: #a6816d; }
+.art-secret { color: #8a729e; }
+
+.world-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.world-card p {
+  color: #716f68;
+  font-size: 12px;
+  margin: 6px 0 19px;
+}
+
+.visit {
+  margin-top: auto;
+  font-size: 9px;
+}
+
+.visitor-note {
+  text-align: center;
+  padding: 40px 20px 65px;
+  border-top: 1px solid var(--line);
+}
+
+.visitor-note > p:first-child {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.small-note {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.mini-world {
+  padding: 90px 20px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 0;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: 38px;
+  color: var(--muted);
+}
+
+.back-link:hover {
+  color: var(--ink);
+}
+
+.mini-world h2 {
+  font-size: clamp(36px, 5vw, 58px);
+  margin: 18px 0;
+}
+
+.world-description {
+  margin-bottom: 35px;
+}
+
+.museum-world { background: #eee4d7; }
+.garden-world { background: #e5eadb; }
+.cloud-world { background: #e3eaf0; }
+.shop-world { background: #f1e5dc; }
+.secret-world { background: #e9e1ef; }
+
+.museum-exhibit {
+  max-width: 560px;
+  min-height: 225px;
+  padding: 35px 25px;
+  margin: 0 auto 25px;
+  background: #f9f3e9;
+  border: 1px solid #d8cabb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.exhibit-label, .exhibit-caption {
+  color: #958675;
+  font-size: 9px;
+}
+
+#almost-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(20px, 4vw, 29px);
+  line-height: 1.5;
+}
+
+.button {
+  padding: 13px 19px;
+  border: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.7px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.button:hover, .buy-button:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.button-dark { background: #30332d; color: white; }
+.button-green { background: #55745b; color: white; }
+.button-cloud { background: #567b94; color: white; }
+
+.contribute {
+  max-width: 450px;
+  margin: 45px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.contribute label, .cloud-world label {
+  font-size: 12px;
+}
+
+textarea, select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #c9c5b8;
+  background: #fffaf2;
+  color: var(--ink);
+  outline-offset: 3px;
+}
+
+textarea {
+  min-height: 95px;
+  resize: vertical;
+}
+
+.feedback {
+  font-size: 12px;
+  color: var(--green);
+  min-height: 18px;
+}
+
+.garden-display {
+  margin: 15px auto 25px;
+  max-width: 400px;
+  min-height: 275px;
+  background: #f2f3e7;
+  border: 1px solid #d0d9c4;
+  padding: 30px 20px;
+}
+
+.plant {
+  height: 175px;
+  width: 180px;
+  position: relative;
+  margin: auto;
+}
+
+.stem {
+  position: absolute;
+  width: 5px;
+  height: 115px;
+  bottom: 31px;
+  left: 87px;
+  background: #668653;
+  border-radius: 5px;
+}
+
+.leaf {
+  display: none;
+  position: absolute;
+  width: 30px;
+  height: 18px;
+  border-radius: 100% 0 100% 0;
+  background: #779b65;
+  z-index: 2;
+}
+
+.leaf-1 { left: 58px; bottom: 48px; transform: rotate(20deg); }
+.leaf-2 { right: 53px; bottom: 66px; transform: rotate(70deg); }
+.leaf-3 { left: 58px; bottom: 83px; transform: rotate(10deg); }
+.leaf-4 { right: 52px; bottom: 101px; transform: rotate(65deg); }
+.leaf-5 { left: 62px; bottom: 120px; transform: rotate(15deg); }
+.leaf-6 { right: 60px; bottom: 140px; transform: rotate(65deg); }
+
+.plant-flower {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 77px;
+  z-index: 3;
+  font-size: 30px;
+  color: #d28f8e;
+}
+
+.pot {
+  position: absolute;
+  bottom: 0;
+  left: 58px;
+  width: 65px;
+  height: 44px;
+  background: #b98263;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+}
+
+.leaf-counter {
+  margin-top: 12px;
+  font-size: 10px;
+}
+
+.cloud-illustration {
+  padding: 20px;
+  margin: 15px auto 25px;
+}
+
+.cloud-shape {
+  font-size: 110px;
+  line-height: 1.3;
+  color: #8ba8bb;
+  text-shadow: 0 10px 20px #65869d22;
+}
+
+#cloud-mood {
+  font-size: 12px;
+  color: #5d7588;
+}
+
+.cloud-world select {
+  display: block;
+  max-width: 360px;
+  margin: 10px auto 15px;
+}
+
+.complaint-response {
+  max-width: 420px;
+  margin: 25px auto;
+  padding: 20px;
+  background: #f5f8fa;
+  border: 1px dashed #9fb7c7;
+}
+
+.complaint-response > span {
+  font-size: 8px;
+  color: #678398;
+}
+
+.complaint-response p {
+  margin-top: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 850px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.product {
+  padding: 20px;
+  border: 1px solid #d9c7b9;
+  background: #fbf3ec;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-art {
+  height: 100px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 55px;
+  color: #ac8772;
+}
+
+.product h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 19px;
+}
+
+.product p {
+  min-height: 43px;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 6px 0 12px;
+}
+
+.product > span {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.buy-button {
+  border: 1px solid #bda798;
+  background: transparent;
+  padding: 10px;
+  width: 100%;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+}
+
+.receipt {
+  max-width: 480px;
+  margin: 30px auto 0;
+  padding: 24px;
+  border: 1px dashed #bda798;
+  background: #fbf3ec;
+}
+
+.receipt > p:first-child {
+  font-size: 9px;
+}
+
+#receipt-items {
+  margin: 18px 0;
+  font-size: 13px;
+  white-space: pre-line;
+}
+
+.receipt-total {
+  padding: 12px 0;
+  border-top: 1px dashed #bda798;
+  margin-bottom: 15px;
+}
+
+.secret-button {
+  width: 170px;
+  height: 170px;
+  border: 0;
+  border-radius: 50%;
+  background: #b8a5cb;
+  color: #fff;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  box-shadow: 0 9px 0 #9380a8;
+  transition: transform 0.12s, box-shadow 0.12s;
+  margin: 10px 0 25px;
+}
+
+.secret-button:active {
+  transform: translateY(7px);
+  box-shadow: 0 2px 0 #9380a8;
+}
+
+.secret-response {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  margin: 0 auto 20px;
+  min-height: 32px;
+}
+
+footer {
+  padding: 30px 7%;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+footer a {
+  font-size: 9px;
+}
+
+@media (max-width: 650px) {
+  .topbar {
+    padding: 17px 5%;
+  }
+
+  .hero {
+    padding-top: 55px;
+  }
+
+  .planet-scene {
+    transform: scale(0.88);
+    transform-origin: top center;
+    margin-bottom: -35px;
+  }
+
+  .planet-label {
+    right: 0;
+  }
+
+  .worlds {
+    padding: 55px 5%;
+  }
+
+  .world-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .world-card,
+  .world-card:nth-child(4),
+  .world-card:nth-child(5) {
+    grid-column: auto;
+    padding: 14px;
+    min-height: 280px;
+  }
+
+  .world-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .card-art {
+    height: 95px;
+  }
+
+  .world-card h3 {
+    font-size: 18px;
+  }
+
+  .section-heading {
+    align-items: start;
+  }
+
+  .world-count {
+    padding-top: 5px;
+  }
+
+  .mini-world {
+    padding: 65px 20px;
+  }
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+  }
+
+  .product-art {
+    height: 75px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
